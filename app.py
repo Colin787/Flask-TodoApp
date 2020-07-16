@@ -3,8 +3,13 @@ from flask import Flask, render_template
 #Importing Flack SQLAlchemy so I can use these commands in code ex. db.session.X
 from flask_sqlalchemy import SQLAlchemy
 
+from models import *
+
 #assigning the name of my app to "app" so as to run the app via this variable
 app = Flask(__name__)
+
+# Set the Config file 
+app.config.from_object('config')
 
 @app.route('/')
 def index():
